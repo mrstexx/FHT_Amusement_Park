@@ -44,7 +44,7 @@ TABLESPACE freizeitpark;
 /** Table: person
 /** Developer: Josef Wermann
 /** Description: generelle Personenuebersicht mit Vorname,
-/**              Nachname, Gebdatum, Geschlecht und Land
+/**              Nachname, Gebdatum, Geschlecht Adresse, Ort und Land
 /**
 /*********************************************************************/
 CREATE TABLE person(
@@ -52,6 +52,8 @@ CREATE TABLE person(
 	landID INT REFERENCES land(landID) ON DELETE SET NULL,
 	vorname VARCHAR(255) NOT NULL,
 	nachname VARCHAR(255) NOT NULL,
+	adresse VARCHAR(255) NOT NULL,
+	ortID INT REFERENCES ort(ortID) ON DELETE SET NULL,
 	geburtsdatum DATE,
 	geschlecht VARCHAR(1))
 TABLESPACE freizeitpark;
@@ -97,18 +99,16 @@ TABLESPACE freizeitpark;
 /**
 /** Table: personal
 /** Developer: Josef Wermann
-/** Description: Personalzuordnung zu Ort, Gehalt, eventuell Attraktion
-/**              Personalnr, SVNR, Adresse und Abteilung
+/** Description: Personalzuordnung zu Gehalt, eventuell Attraktion
+/**              Personalnr, SVNR und Abteilung
 /**
 /*********************************************************************/
 CREATE TABLE personal(
 	personID INT PRIMARY KEY REFERENCES person(personID) ON DELETE CASCADE,
-	ortID INT REFERENCES ort(ortID) ON DELETE SET NULL,
 	gehaltsstufeID INT REFERENCES gehaltsstufe(gehaltsstufeID) ON DELETE SET NULL,
 	attraktionID INT REFERENCES attraktion(attraktionID) ON DELETE SET NULL,
 	personalnr VARCHAR(20) UNIQUE NOT NULL,
 	svnr VARCHAR(10) UNIQUE NOT NULL,
-	adresse VARCHAR(255),
 	abteilungID INT REFERENCES abteilung(abteilungID) ON DELETE SET NULL)
 TABLESPACE freizeitpark;
 
