@@ -272,181 +272,181 @@ INSERT INTO ort
 INSERT INTO person
 	VALUES (1, 151, 'Franz', 'Wadsack', 'Holzweg 1', 64, TO_DATE('08/08/1968', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (2, 151, 'Nadine', 'Pernerdstorfer', 'Holzweg 1', 64, TO_DATE('03/11/1978', 'DD/MM/YYYY'), 'w');
+	VALUES (2, 151, 'Nadine', 'Pernerdstorfer', 'An den langen Lüssen 19', 63, TO_DATE('03/11/1978', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (3, 151, 'Thomas', 'Fitz', 'Holzweg 1', 64, TO_DATE('02/01/1971', 'DD/MM/YYYY'), 'm');
+	VALUES (3, 151, 'Thomas', 'Fitz', 'Quadenstrasse 27/7', 55, TO_DATE('02/01/1971', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (4, 151, 'Miriam', 'Ecker', 'Holzweg 1', 64, TO_DATE('02/01/1977', 'DD/MM/YYYY'), 'w');
+	VALUES (4, 151, 'Miriam', 'Ecker', 'Turmweg 66', 66, TO_DATE('02/01/1977', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (5, 151, 'Maximilian', 'Acker', 'Holzweg 1', 64, TO_DATE('14/12/1958', 'DD/MM/YYYY'), 'm');
+	VALUES (5, 151, 'Maximilian', 'Acker', 'Distlweg 3/1', 68, TO_DATE('14/12/1958', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (6, 151, 'Maximilian', 'Acker', 'Holzweg 1', 64, TO_DATE('05/09/1981', 'DD/MM/YYYY'), 'm');
+	VALUES (6, 151, 'Maximilian', 'Acker', 'Mariannengasse 7/2/3', 60, TO_DATE('05/09/1981', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (7, 151, 'Lydia', 'Acker', 'Holzweg 1', 64, TO_DATE('22/10/1983', 'DD/MM/YYYY'), 'w');
+	VALUES (7, 151, 'Lydia', 'Acker', 'Mariannengasse 7/2/3', 60, TO_DATE('22/10/1983', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (8, 151, 'Lina', 'Severovic', 'Holzweg 1', 64, TO_DATE('21/05/1968', 'DD/MM/YYYY'), 'w');
+	VALUES (8, 151, 'Lina', 'Severovic', 'Kagraner Platz 7/1/28', 55, TO_DATE('21/05/1968', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (9, 151, 'Hubert', 'Musek', 'Holzweg 1', 64, TO_DATE('17/02/1973', 'DD/MM/YYYY'), 'm');
+	VALUES (9, 151, 'Hubert', 'Musek', 'Pastinakenweg 108/2', 55, TO_DATE('17/02/1973', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (10, 151, 'Josef', 'Mann', 'Holzweg 1', 64, TO_DATE('03/03/1978', 'DD/MM/YYYY'), 'm');
+	VALUES (10, 151, 'Josef', 'Mann', 'Mahlerstrasse 14/3/18', 52, TO_DATE('03/03/1978', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (11, 151, 'Cornelia', 'Mann', 'Holzweg 1', 64, TO_DATE('23/10/1983', 'DD/MM/YYYY'), 'w');
+	VALUES (11, 151, 'Cornelia', 'Mann', 'Mahlerstrasse 14/3/18', 52, TO_DATE('23/10/1983', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (12, 151, 'Saphira', 'Mann', 'Holzweg 1', 64, TO_DATE('18/11/2002', 'DD/MM/YYYY'), 'w');
+	VALUES (12, 151, 'Saphira', 'Mann', 'Mahlerstrasse 14/3/18', 52, TO_DATE('18/11/2002', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (13, 151, 'Cecilia', 'Mann', 'Holzweg 1', 64, TO_DATE('18/08/2014', 'DD/MM/YYYY'), 'w');
+	VALUES (13, 151, 'Cecilia', 'Mann', 'Mahlerstrasse 14/3/18', 52, TO_DATE('18/08/2014', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (14, 151, 'Herbert', 'Supper', 'Holzweg 1', 64, TO_DATE('13/06/1960', 'DD/MM/YYYY'), 'm');
+	VALUES (14, 151, 'Herbert', 'Supper', 'Slatingasse 36/6', 62, TO_DATE('13/06/1960', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (15, 151, 'Ruth', 'Nowak', 'Holzweg 1', 64, TO_DATE('01/07/1964', 'DD/MM/YYYY'), 'w');
+	VALUES (15, 151, 'Ruth', 'Nowak', 'Zieglergasse 101/4/17', 57, TO_DATE('01/07/1964', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (16, 151, 'Maria', 'Koller', 'Holzweg 1', 64, TO_DATE('07/05/1979', 'DD/MM/YYYY'), 'w');
+	VALUES (16, 151, 'Maria', 'Koller', 'Höchstädtplatz 8/1', 58, TO_DATE('07/05/1979', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (17, 151, 'Johann', 'Koller', 'Holzweg 1', 64, TO_DATE('07/08/2000', 'DD/MM/YYYY'), 'm');
+	VALUES (17, 151, 'Johann', 'Koller', 'Höchstädtplatz 8/1', 58, TO_DATE('07/08/2000', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (18, 151, 'Ivy', 'Koller', 'Holzweg 1', 64, TO_DATE('11/06/2005', 'DD/MM/YYYY'), 'w');
+	VALUES (18, 151, 'Ivy', 'Koller', 'Höchstädtplatz 8/1', 58, TO_DATE('11/06/2005', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (19, 000, 'Jens', 'Müller', 'Holzweg 1', 64, TO_DATE('05/06/1994', 'DD/MM/YYYY'), 'm');
+	VALUES (19, 000, 'Jens', 'Müller', 'Weißwurstweg 17/1/3', 21, TO_DATE('05/06/1994', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (20, 165, 'Istvan', 'Nagy', 'Holzweg 1', 64, TO_DATE('17/04/2001', 'DD/MM/YYYY'), 'm');
+	VALUES (20, 165, 'Istvan', 'Nagy', 'Almásfüzit? 7/1/3', 102, TO_DATE('17/04/2001', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (21, 165, 'Anna', 'Baba', 'Holzweg 1', 64, TO_DATE('08/08/1968', 'DD/MM/YYYY'), 'w');
+	VALUES (21, 165, 'Anna', 'Baba', 'Tiszabecs 19/12', 105, TO_DATE('08/08/1968', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (22, 122, 'Alija', 'Kodro', 'Holzweg 1', 64, TO_DATE('04/11/2002', 'DD/MM/YYYY'), 'w');
+	VALUES (22, 122, 'Alija', 'Kodro', 'Avde Smajlovi?a 38', 1, TO_DATE('04/11/2002', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (23, 122, 'Omer', 'Susic', 'Holzweg 1', 64, TO_DATE('11/11/1930', 'DD/MM/YYYY'), 'm');
+	VALUES (23, 122, 'Omer', 'Susic', 'Ferhat Pa¨e Sokolovi?a 43/2/14', 3, TO_DATE('11/11/1930', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (24, 122, 'Sfefan', 'Modric', 'Holzweg 1', 64, TO_DATE('18/05/1956', 'DD/MM/YYYY'), 'm');
+	VALUES (24, 122, 'Sfefan', 'Modric', 'Kolodvorska 19/3/9', 4, TO_DATE('18/05/1956', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
 	VALUES (25, 427, 'Bo', 'Li', 'Holzweg 1', 64, TO_DATE('25/12/1986', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (26, 427, 'Mailin', 'Zhang', 'Holzweg 1', 64, TO_DATE('06/08/1971', 'DD/MM/YYYY'), 'w');
+	VALUES (26, 427, 'Mailin', 'Zhang', 'Nanjing 8/7', 7, TO_DATE('06/08/1971', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (27, 427, 'Huan', 'Zhang', 'Holzweg 1', 64, TO_DATE('19/04/1997', 'DD/MM/YYYY'), 'm');
+	VALUES (27, 427, 'Huan', 'Zhang', 'Nanjing 8/7', 7, TO_DATE('19/04/1997', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (28, 427, 'Ning', 'Chen', 'Holzweg 1', 64, TO_DATE('02/10/1966', 'DD/MM/YYYY'), 'm');
+	VALUES (28, 427, 'Ning', 'Chen', 'Ximending 181/9', 10, TO_DATE('02/10/1966', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (29, 427, 'Tian', 'Li', 'Holzweg 1', 64, TO_DATE('02/02/1991', 'DD/MM/YYYY'), 'm');
+	VALUES (29, 427, 'Tian', 'Li', 'Jiefangbei 99/9', 9, TO_DATE('02/02/1991', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (30, 427, 'Li', 'Li', 'Holzweg 1', 64, TO_DATE('03/07/1993', 'DD/MM/YYYY'), 'w');
+	VALUES (30, 427, 'Li', 'Li', 'Jiefangbei 99/9', 9, TO_DATE('03/07/1993', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (31, 000, 'Horst', 'Fuchs', 'Holzweg 1', 64, TO_DATE('03/07/1993', 'DD/MM/YYYY'), 'm');
+	VALUES (31, 000, 'Horst', 'Fuchs', 'Poststrasse 32/23', 24, TO_DATE('03/07/1993', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (32, 000, 'Karl-Uwe', 'Ochs', 'Holzweg 1', 64, TO_DATE('01/01/2001', 'DD/MM/YYYY'), 'm');
+	VALUES (32, 000, 'Karl-Uwe', 'Ochs', 'Holzweg 1', 13, TO_DATE('01/01/2001', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (33, 000, 'Herbert', 'Busch', 'Holzweg 1', 64, TO_DATE('08/03/1997', 'DD/MM/YYYY'), 'm');
+	VALUES (33, 000, 'Herbert', 'Busch', 'Dornenweg 77/2', 23, TO_DATE('08/03/1997', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (34, 000, 'Adil', 'Ümet', 'Holzweg 1', 64, TO_DATE('15/03/2000', 'DD/MM/YYYY'), 'm');
+	VALUES (34, 000, 'Adil', 'Ümet', 'Wegweg 18/7/1', 15, TO_DATE('15/03/2000', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (35, 000, 'Max', 'Moritz', 'Holzweg 1', 64, TO_DATE('09/09/1984', 'DD/MM/YYYY'), 'm');
+	VALUES (35, 000, 'Max', 'Moritz', 'Buschweg 17/1', 20, TO_DATE('09/09/1984', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (36, 000, 'Adrian', 'Mertesacker', 'Holzweg 1', 64, TO_DATE('18/01/1965', 'DD/MM/YYYY'), 'm');
+	VALUES (36, 000, 'Adrian', 'Mertesacker', 'Münchnerstrasse 18/23', 24, TO_DATE('18/01/1965', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (37, 000, 'Boris', 'Schneider', 'Holzweg 1', 64, TO_DATE('09/06/1971', 'DD/MM/YYYY'), 'm');
+	VALUES (37, 000, 'Boris', 'Schneider', 'Radelandstrasse 24', 13, TO_DATE('09/06/1971', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (38, 000, 'Jeannine', 'Schneider', 'Holzweg 1', 64, TO_DATE('03/11/2000', 'DD/MM/YYYY'), 'w');
+	VALUES (38, 000, 'Jeannine', 'Schneider', 'Radelandstrasse 24', 13, TO_DATE('03/11/2000', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (39, 000, 'Jaqueline', 'Schneider', 'Holzweg 1', 64, TO_DATE('13/01/1999', 'DD/MM/YYYY'), 'w');
+	VALUES (39, 000, 'Jaqueline', 'Schneider', 'Radelandstrasse 24', 13, TO_DATE('13/01/1999', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (40, 000, 'Jessica', 'Schneider', 'Holzweg 1', 64, TO_DATE('04/04/2001', 'DD/MM/YYYY'), 'w');
+	VALUES (40, 000, 'Jessica', 'Schneider', 'Radelandstrasse 24', 13, TO_DATE('04/04/2001', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (41, 000, 'Stefanie', 'Schneider', 'Holzweg 1', 64, TO_DATE('11/12/1980', 'DD/MM/YYYY'), 'w');
+	VALUES (41, 000, 'Stefanie', 'Schneider', 'Radelandstrasse 24', 13, TO_DATE('11/12/1980', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (42, 000, 'Mimi', 'Moritz', 'Holzweg 1', 64, TO_DATE('01/09/1947', 'DD/MM/YYYY'), 'w');
+	VALUES (42, 000, 'Mimi', 'Moritz', 'Buschweg 17/2', 20, TO_DATE('01/09/1947', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (43, 000, 'Cornelia', 'Schnitzer', 'Holzweg 1', 64, TO_DATE('07/03/1973', 'DD/MM/YYYY'), 'w');
+	VALUES (43, 000, 'Cornelia', 'Schnitzer', 'Elcknerplatz 7/6/1', 18, TO_DATE('07/03/1973', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (44, 129, 'Adrien', 'Agreste', 'Holzweg 1', 64, TO_DATE('17/08/1967', 'DD/MM/YYYY'), 'm');
+	VALUES (44, 129, 'Adrien', 'Agreste', 'Allée André-Breton 7/3', 26, TO_DATE('17/08/1967', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (45, 129, 'Marinette', 'Agreste', 'Holzweg 1', 64, TO_DATE('09/11/1967', 'DD/MM/YYYY'), 'w');
+	VALUES (45, 129, 'Marinette', 'Agreste', 'Allée André-Breton 7/3', 26, TO_DATE('09/11/1967', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (46, 129, 'Julien', 'Agreste', 'Holzweg 1', 64, TO_DATE('02/03/1991', 'DD/MM/YYYY'), 'm');
+	VALUES (46, 129, 'Julien', 'Agreste', 'Allée André-Breton 7/3', 26, TO_DATE('02/03/1991', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (47, 129, 'Gerard', 'Dupas', 'Holzweg 1', 64, TO_DATE('10/07/1979', 'DD/MM/YYYY'), 'm');
+	VALUES (47, 129, 'Gerard', 'Dupas', 'Rue de la Gaqcue 69', 28, TO_DATE('10/07/1979', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (48, 129, 'Miriam', 'Dupas', 'Holzweg 1', 64, TO_DATE('01/12/1985', 'DD/MM/YYYY'), 'w');
+	VALUES (48, 129, 'Miriam', 'Dupas', 'Rue de la Gaqcue 69', 28, TO_DATE('01/12/1985', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (49, 129, 'Noel', 'Dupas', 'Holzweg 1', 64, TO_DATE('09/10/2005', 'DD/MM/YYYY'), 'm');
+	VALUES (49, 129, 'Noel', 'Dupas', 'Rue de la Gaqcue 69', 28, TO_DATE('09/10/2005', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (50, 129, 'Lili', 'Dupas', 'Holzweg 1', 64, TO_DATE('27/03/2017', 'DD/MM/YYYY'), 'w');
+	VALUES (50, 129, 'Lili', 'Dupas', 'Rue de la Gaqcue 69', 28, TO_DATE('27/03/2017', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (51, 134, 'Philipos', 'Tsitsipas', 'Holzweg 1', 64, TO_DATE('26/11/2000', 'DD/MM/YYYY'), 'm');
+	VALUES (51, 134, 'Philipos', 'Tsitsipas', 'Egnatia Odos 87', 30, TO_DATE('26/11/2000', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (52, 134, 'Daphne', 'Nikiforos', 'Holzweg 1', 64, TO_DATE('21/02/1999', 'DD/MM/YYYY'), 'w');
+	VALUES (52, 134, 'Daphne', 'Nikiforos', 'Diodia Katexaki 33/2/17', 30, TO_DATE('21/02/1999', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (53, 134, 'Georgios', 'Passadakis', 'Holzweg 1', 64, TO_DATE('15/09/2001', 'DD/MM/YYYY'), 'd');
+	VALUES (53, 134, 'Georgios', 'Passadakis', 'Rio Antirrio 8/2', 31, TO_DATE('15/09/2001', 'DD/MM/YYYY'), 'd');
 INSERT INTO person
-	VALUES (54, 137, 'Francesco', 'Russo', 'Holzweg 1', 64, TO_DATE('16/08/1975', 'DD/MM/YYYY'), 'm');
+	VALUES (54, 137, 'Francesco', 'Russo', 'Via Margutta 18', 33, TO_DATE('16/08/1975', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (55, 137, 'Sofia', 'Russo', 'Holzweg 1', 64, TO_DATE('23/11/1977', 'DD/MM/YYYY'), 'w');
+	VALUES (55, 137, 'Sofia', 'Russo', 'Via Margutta 18', 33, TO_DATE('23/11/1977', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (56, 137, 'Alessandro', 'Russo', 'Holzweg 1', 64, TO_DATE('07/07/2001', 'DD/MM/YYYY'), 'm');
+	VALUES (56, 137, 'Alessandro', 'Russo', 'Via Margutta 18', 33, TO_DATE('07/07/2001', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (57, 137, 'Giulia', 'Russo', 'Holzweg 1', 64, TO_DATE('03/08/2002', 'DD/MM/YYYY'), 'w');
+	VALUES (57, 137, 'Giulia', 'Russo', 'Via Margutta 18', 33, TO_DATE('03/08/2002', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (58, 137, 'Andrea', 'Ferrari', 'Holzweg 1', 64, TO_DATE('18/04/1995', 'DD/MM/YYYY'), 'm');
+	VALUES (58, 137, 'Andrea', 'Ferrari', 'Corso Vittorio Emanuele 2', 38, TO_DATE('18/04/1995', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (59, 137, 'Giuseppe', 'Bianchi', 'Holzweg 1', 64, TO_DATE('19/03/1996', 'DD/MM/YYYY'), 'm');
+	VALUES (59, 137, 'Giuseppe', 'Bianchi', 'Via Flaminia 101/17', 37, TO_DATE('19/03/1996', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (60, 137, 'Anna', 'Esposito', 'Holzweg 1', 64, TO_DATE('18/12/1976', 'DD/MM/YYYY'), 'w');
+	VALUES (60, 137, 'Anna', 'Esposito', 'Via Latina 7/22', 35, TO_DATE('18/12/1976', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (61, 137, 'Gaia', 'Ferrari', 'Holzweg 1', 64, TO_DATE('01/05/1998', 'DD/MM/YYYY'), 'w');
+	VALUES (61, 137, 'Gaia', 'Ferrari', 'Corso Vittorio Emanuele 2', 38, TO_DATE('01/05/1998', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (62, 137, 'Antonio', 'Ferrari', 'Holzweg 1', 64, TO_DATE('12/11/2016', 'DD/MM/YYYY'), 'm');
+	VALUES (62, 137, 'Antonio', 'Ferrari', 'Corso Vittorio Emanuele 2', 38, TO_DATE('12/11/2016', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (63, 137, 'Noemi', 'Ferrari', 'Holzweg 1', 64, TO_DATE('11/09/2017', 'DD/MM/YYYY'), 'w');
+	VALUES (63, 137, 'Noemi', 'Ferrari', 'Corso Vittorio Emanuele 2', 38, TO_DATE('11/09/2017', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (64, 442, 'Haruto', 'Takahashi', 'Holzweg 1', 64, TO_DATE('19/04/1985', 'DD/MM/YYYY'), 'm');
+	VALUES (64, 442, 'Haruto', 'Takahashi', '17-8-2 18C Higashi-Ikebukuro', 39, TO_DATE('19/04/1985', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (65, 442, 'Riku', 'Watanabe', 'Holzweg 1', 64, TO_DATE('27/05/1987', 'DD/MM/YYYY'), 'm');
+	VALUES (65, 442, 'Riku', 'Watanabe', '3-13-3 3F Seiwa Ikebukuro', 40, TO_DATE('27/05/1987', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (66, 442, 'Yui', 'Watanabe', 'Holzweg 1', 64, TO_DATE('21/12/1990', 'DD/MM/YYYY'), 'w');
+	VALUES (66, 442, 'Yui', 'Watanabe', '3-13-3 3F Seiwa Ikebukuro', 40, TO_DATE('21/12/1990', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (67, 442, 'Soru', 'Watanabe', 'Holzweg 1', 64, TO_DATE('08/10/2008', 'DD/MM/YYYY'), 'm');
+	VALUES (67, 442, 'Soru', 'Watanabe', '3-13-3 3F Seiwa Ikebukuro', 40, TO_DATE('08/10/2008', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (68, 442, 'Mei', 'Yamamoto', 'Holzweg 1', 64, TO_DATE('10/10/2000', 'DD/MM/YYYY'), 'w');
+	VALUES (68, 442, 'Mei', 'Yamamoto', '1-1-19 2D Toshima-ku', 46, TO_DATE('10/10/2000', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (69, 130, 'Miran', 'Horvat', 'Holzweg 1', 64, TO_DATE('07/09/1999', 'DD/MM/YYYY'), 'm');
+	VALUES (69, 130, 'Miran', 'Horvat', 'Petrinjska 1/7', 51, TO_DATE('07/09/1999', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (70, 130, 'Iva', 'Horvat', 'Holzweg 1', 64, TO_DATE('09/05/1999', 'DD/MM/YYYY'), 'w');
+	VALUES (70, 130, 'Iva', 'Horvat', 'Petrinjska 1/7', 51, TO_DATE('09/05/1999', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (71, 368, 'John', 'Doe', 'Holzweg 1', 64, TO_DATE('01/01/1920', 'DD/MM/YYYY'), 'm');
+	VALUES (71, 368, 'John', 'Doe', 'Times Square 17/38/399', 106, TO_DATE('01/01/1920', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (72, 368, 'Jane', 'Doe', 'Holzweg 1', 64, TO_DATE('01/01/1920', 'DD/MM/YYYY'), 'w');
+	VALUES (72, 368, 'Jane', 'Doe', 'Times Square 17/38/399', 106, TO_DATE('01/01/1920', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (73, 368, 'James', 'Smith', 'Holzweg 1', 64, TO_DATE('03/11/1978', 'DD/MM/YYYY'), 'm');
+	VALUES (73, 368, 'James', 'Smith', 'Bel Air Avenue 1/7', 109, TO_DATE('03/11/1978', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (74, 368, 'Sue', 'Smith', 'Holzweg 1', 64, TO_DATE('24/03/1981', 'DD/MM/YYYY'), 'w');
+	VALUES (74, 368, 'Sue', 'Smith', 'Bel Air Avenue 1/7', 109, TO_DATE('24/03/1981', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (75, 368, 'Tom', 'Smith', 'Holzweg 1', 64, TO_DATE('16/06/1998', 'DD/MM/YYYY'), 'm');
+	VALUES (75, 368, 'Tom', 'Smith', 'Bel Air Avenue 1/7', 109, TO_DATE('16/06/1998', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (76, 368, 'Jane', 'Smith', 'Holzweg 1', 64, TO_DATE('11/02/1999', 'DD/MM/YYYY'), 'w');
+	VALUES (76, 368, 'Jane', 'Smith', 'Bel Air Avenue 1/7', 109, TO_DATE('11/02/1999', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (77, 368, 'Eric', 'Smith', 'Holzweg 1', 64, TO_DATE('09/05/2000', 'DD/MM/YYYY'), 'm');
+	VALUES (77, 368, 'Eric', 'Smith', 'Bel Air Avenue 1/7', 109, TO_DATE('09/05/2000', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (78, 368, 'Mike', 'Smith', 'Holzweg 1', 64, TO_DATE('03/10/2001', 'DD/MM/YYYY'), 'm');
+	VALUES (78, 368, 'Mike', 'Smith', 'Bel Air Avenue 1/7', 109, TO_DATE('03/10/2001', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (79, 368, 'Jeanny', 'Bush', 'Holzweg 1', 64, TO_DATE('06/06/1956', 'DD/MM/YYYY'), 'w');
+	VALUES (79, 368, 'Jeanny', 'Bush', 'Maple Road 883', 112, TO_DATE('06/06/1956', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (80, 368, 'Donald', 'Trump', 'Holzweg 1', 64, TO_DATE('17/01/1979', 'DD/MM/YYYY'), 'm');
+	VALUES (80, 368, 'Donald', 'Trump', 'White House 1', 112, TO_DATE('17/01/1979', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (81, 165, 'Bence', 'Nagy', 'Holzweg 1', 64, TO_DATE('08/11/1986', 'DD/MM/YYYY'), 'm');
+	VALUES (81, 165, 'Bence', 'Nagy', ' Váci utca 1/1/3', 102, TO_DATE('08/11/1986', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (82, 165, 'Adam', 'Kovacs', 'Holzweg 1', 64, TO_DATE('17/03/1996', 'DD/MM/YYYY'), 'm');
+	VALUES (82, 165, 'Adam', 'Kovacs', 'Veszprém 32/6', 105, TO_DATE('17/03/1996', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (83, 165, 'Balasz', 'Toth', 'Holzweg 1', 64, TO_DATE('26/04/1997', 'DD/MM/YYYY'), 'm');
+	VALUES (83, 165, 'Balasz', 'Toth', 'Debrecen utca 83/6', 105, TO_DATE('26/04/1997', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (84, 165, 'Tamas', 'Varga', 'Holzweg 1', 64, TO_DATE('02/09/1986', 'DD/MM/YYYY'), 'm');
+	VALUES (84, 165, 'Tamas', 'Varga', 'Balassagyarmat 9/4', 105, TO_DATE('02/09/1986', 'DD/MM/YYYY'), 'm');
 INSERT INTO person
-	VALUES (85, 165, 'Anna', 'Kiss', 'Holzweg 1', 64, TO_DATE('08/07/1975', 'DD/MM/YYYY'), 'w');
+	VALUES (85, 165, 'Anna', 'Kiss', 'Székesfehérvár 17/3', 105, TO_DATE('08/07/1975', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (86, 165, 'Victoria', 'Molnar', 'Holzweg 1', 64, TO_DATE('11/10/1978', 'DD/MM/YYYY'), 'w');
+	VALUES (86, 165, 'Victoria', 'Molnar', 'Miskolc utca 6', 104, TO_DATE('11/10/1978', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (87, 165, 'Bianka', 'Farkas', 'Holzweg 1', 64, TO_DATE('14/05/1991', 'DD/MM/YYYY'), 'w');
+	VALUES (87, 165, 'Bianka', 'Farkas', 'Mosonmagyaróvár 14/14', 104, TO_DATE('14/05/1991', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (88, 165, 'Nicolett', 'Balogh', 'Holzweg 1', 64, TO_DATE('01/01/2000', 'DD/MM/YYYY'), 'w');
+	VALUES (88, 165, 'Nicolett', 'Balogh', 'Tompa utca 8/15', 103, TO_DATE('01/01/2000', 'DD/MM/YYYY'), 'w');
 INSERT INTO person
-	VALUES (89, 165, 'Laura', 'Szabo', 'Holzweg 1', 64, TO_DATE('02/08/1994', 'DD/MM/YYYY'), 'w');
+	VALUES (89, 165, 'Laura', 'Szabo', 'Kecskemét 6/1', 104, TO_DATE('02/08/1994', 'DD/MM/YYYY'), 'w');
 
 
 INSERT INTO gehaltsstufe
