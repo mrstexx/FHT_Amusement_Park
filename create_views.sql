@@ -48,12 +48,19 @@ AS
 				  	    FROM gaeste_kinder JOIN gaeste ON(personID_elternteil = personID)
 					  									     JOIN person USING(personID)
 					  		WHERE geschlecht = 'm')
-
+/**
+--OLD
 SELECT name_kind, name_mutter, name_vater
 FROM kind LEFT JOIN mutter USING(personID_kind, personID_elternteil)
           LEFT JOIN vater USING(personID_kind, personID_elternteil)
 ORDER BY name_kind;
+**/
 
+--NEW
+SELECT DISTINCT name_kind, name_mutter, name_vater
+FROM kind LEFT JOIN mutter USING(personID_kind)
+          LEFT JOIN vater USING(personID_kind)
+ORDER BY name_kind;
 														 
 --SELECT * FROM kinder_view;
 
