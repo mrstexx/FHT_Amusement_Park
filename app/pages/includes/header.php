@@ -54,17 +54,18 @@
             <!--                    </li>-->
             <!--                </ul>-->
             <!--            </li>-->
-            <li class="<?php if (strpos($_SERVER[PHP_SELF], 'new_ticket.php') != false
-                || strpos($_SERVER[PHP_SELF], 'index.php') != false) {
+            <li class="<?php if (strpos($_SERVER['PHP_SELF'], 'new_ticket.php') != false
+                || strpos($_SERVER['PHP_SELF'], 'index.php') != false) {
                 echo "active";
             } ?>">
-                <a href="<?php echo $path ? $path : ""; ?>new_ticket.php"><i class="fas fa-ticket-alt fa-fw"></i> New
+                <a href="<?php echo isset($path) ? $path : ""; ?>new_ticket.php"><i class="fas fa-ticket-alt fa-fw"></i>
+                    New
                     Ticket</a>
             </li>
-            <li class="<?php if (strpos($_SERVER[PHP_SELF], 'invoices.php') !== false) {
+            <li class="<?php if (strpos($_SERVER['PHP_SELF'], 'invoices.php') !== false) {
                 echo "active";
             } ?>">
-                <a href="<?php echo $path ? $path : ""; ?>invoices.php"><i class="fas fa-receipt fa-fw"></i>
+                <a href="<?php echo isset($path) ? $path : ""; ?>invoices.php"><i class="fas fa-receipt fa-fw"></i>
                     Invoices</a>
             </li>
             <li>
@@ -73,8 +74,10 @@
             <li>
                 <a href="#"><i class="fas fa-bed fa-fw"></i> Rooms</a>
             </li>
-            <li>
-                <a href="#"><i class="far fa-id-badge fa-fw"></i> Employees</a>
+            <li class="<?php if (strpos($_SERVER['PHP_SELF'], 'employees.php') !== false) {
+                echo "active";
+            } ?>">
+                <a href="<?php echo isset($path) ? $path : ""; ?>employees.php"><i class="far fa-id-badge fa-fw"></i> Employees</a>
             </li>
         </ul>
     </nav>
