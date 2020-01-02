@@ -157,3 +157,16 @@ a.article:hover {
         display: none;
     }
 }
+
+/*
+EMPLOYEES STYLE
+ */
+
+.table .thead-blue {
+    color: white;
+    background-color: #0277bd;
+}
+
+.employees-control-bar {
+    margin-bottom: 10px;
+}
