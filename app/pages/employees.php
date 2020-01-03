@@ -11,7 +11,7 @@ include "../model/Personal.php";
                 <i class="fas fa-bars"></i>
             </button>
 
-            <h3>List of Employees</h3>
+            <h3>List of Employees - Edit Mode</h3>
 
         </div>
     </nav>

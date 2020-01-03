@@ -4,7 +4,6 @@ include '../manager/DatabaseManager.php';
 
 class Personal extends DatabaseManager
 {
-
     private function getPersonalData()
     {
         $data = array();
@@ -23,6 +22,7 @@ class Personal extends DatabaseManager
                 $rowObj->attractionID = $row['ATTRAKTIONID'];
                 array_push($data, $rowObj);
             }
+            oci_free_statement($statement);
         }
         $this->disconnect();
         return $data;
@@ -41,6 +41,7 @@ class Personal extends DatabaseManager
                 $rowObj->value = $row['BEZEICHNUNG'];
                 array_push($data, $rowObj);
             }
+            oci_free_statement($statement);
         }
         $this->disconnect();
         return $data;
@@ -59,6 +60,7 @@ class Personal extends DatabaseManager
                 $rowObj->value = $row['MONATSGEHALT'];
                 array_push($data, $rowObj);
             }
+            oci_free_statement($statement);
         }
         $this->disconnect();
         return $data;
@@ -77,6 +79,7 @@ class Personal extends DatabaseManager
                 $rowObj->value = $row['BEZEICHNUNG'];
                 array_push($data, $rowObj);
             }
+            oci_free_statement($statement);
         }
         $this->disconnect();
         return $data;
@@ -120,6 +123,10 @@ class Personal extends DatabaseManager
         $data = $this->getPersonalData();
         $preparedData = $this->getPreparedData($data);
         $counter = 1;
+        // ext data is for null value
+        $ext = new stdClass();
+        $ext->id = 0;
+        $ext->value = "";
         foreach ($preparedData as $row) {
             echo "<tr>";
 
@@ -136,42 +143,63 @@ class Personal extends DatabaseManager
             echo '<td>' . $row->gender . '</td>';
 
             // department
-            if ($row->departmentVal) {
-                echo '<td><div class="form-group"><select class="form-control">';
-                foreach ($row->departments as $option) {
-                    $selected = $option->value === $row->departmentVal ? 'selected' : '';
-                    echo '<option id="el-' . $option->id . '" ' . $selected . '>' . $option->value . '</option>';
-                }
-            } else {
-                echo '<td><div class="form-group"><select class="form-control" disabled>';
+            array_push($row->departments, $ext);
+            echo '<td><div class="form-group"><select class="form-control">';
+            foreach ($row->departments as $option) {
+                $selected = $option->value === $row->departmentVal ? 'selected' : '';
+                echo '<option id="el-' . $option->id . '" ' . $selected . '>' . $option->value . '</option>';
             }
             echo '</select></div></td>';
 
             // salary
-            if ($row->salaryVal) {
-                echo '<td><div class="form-group"><select class="form-control">';
-                foreach ($row->salaryRanges as $option) {
-                    $selected = $option->value === $row->salaryVal ? 'selected' : '';
-                    echo '<option id="el-' . $option->id . '" ' . $selected . '>' . $option->value . '</option>';
-                }
-            } else {
-                echo '<td><div class="form-group"><select class="form-control" disabled>';
+            array_push($row->salaryRanges, $ext);
+            echo '<td><div class="form-group"><select class="form-control">';
+            foreach ($row->salaryRanges as $option) {
+                $selected = $option->value === $row->salaryVal ? 'selected' : '';
+                echo '<option id="el-' . $option->id . '" ' . $selected . '>' . $option->value . '</option>';
             }
             echo '</select></div></td>';
 
             // attraction
-            if ($row->attractionVal) {
-                echo '<td><div class="form-group"><select class="form-control">';
-                foreach ($row->attractions as $option) {
-                    $selected = $option->value === $row->attractionVal ? 'selected' : '';
-                    echo '<option id="el-' . $option->id . '" ' . $selected . '>' . $option->value . '</option>';
-                }
-            } else {
-                echo '<td><div class="form-group"><select class="form-control" disabled>';
+            array_push($row->attractions, $ext);
+            echo '<td><div class="form-group"><select class="form-control">';
+            foreach ($row->attractions as $option) {
+                $selected = $option->value === $row->attractionVal ? 'selected' : '';
+                echo '<option id="el-' . $option->id . '" ' . $selected . '>' . $option->value . '</option>';
             }
             echo '</select></div></td>';
             echo "</tr>";
             $counter++;
         }
+    }
+
+    public function updatePersonalData($newData)
+    {
+        $conn = $this->connect();
+        $noError = true;
+        if ($conn) {
+            foreach ($newData as $entry) {
+                $personID = $entry['personID'];
+                $newDepID = $entry['newDepartmentID'] === "0" ? null : $entry['newDepartmentID'];
+                $newSalaryID = $entry['newSalaryID'] === "0" ? null : $entry['newSalaryID'];
+                $newAttrID = $entry['newAttractionID'] === "0" ? null : $entry['newAttractionID'];
+
+                // update data
+                $sql = "BEGIN sp_updatePersonalData(:personID, :depID, :salaryID, :attrID); END;";
+                $stmt = oci_parse($conn, $sql);
+                oci_bind_by_name($stmt, ':personID', $personID);
+                oci_bind_by_name($stmt, ':depID', $newDepID);
+                oci_bind_by_name($stmt, ':salaryID', $newSalaryID);
+                oci_bind_by_name($stmt, ':attrID', $newAttrID);
+                $result = oci_execute($stmt, OCI_COMMIT_ON_SUCCESS);
+                if (!$result) {
+                    $noError = false;
+                    echo oci_error();
+                }
+                oci_free_statement($stmt);
+            }
+        }
+        $this->disconnect();
+        return $noError;
     }
 }

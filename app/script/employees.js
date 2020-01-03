@@ -6,11 +6,14 @@ const getTableData = () => {
     if (tableRows && tableRows.length > 0) {
         for (let i = 1; i < tableRows.length; i++) {
             const row = tableRows[i];
+            const departOption = row.cells[4].querySelector("select");
+            const salaryOption = row.cells[5].querySelector("select");
+            const attractionOption = row.cells[6].querySelector("select");
             data.push({
-                id: row.cells[0].id,
-                department: row.cells[4].querySelector("[selected]").innerHTML,
-                salary: row.cells[5].querySelector("[selected]").innerHTML,
-                attraction: row.cells[6].querySelector("[selected]").innerHTML
+                personID: row.cells[0].id.substr(3),
+                newDepartmentID: departOption.options[departOption.selectedIndex].id.substr(3),
+                newSalaryID: salaryOption.options[salaryOption.selectedIndex].id.substr(3),
+                newAttractionID: attractionOption.options[attractionOption.selectedIndex].id.substr(3)
             });
         }
     }
@@ -22,12 +25,18 @@ saveChangesBtn.on("click", (e) => {
     const data = getTableData();
     $.ajax({
         type: "POST",
-        url: "../actions/action.php",
-        data: data,
+        url: "../actions/update_personal.php",
+        data: {
+            'val': data
+        },
         dataType: "json",
-        contentType: "application/json; charset=utf-8",
         success: (response) => {
-            alert(response);
+            if (response && response.error) {
+                alert("An error occurred. It may happen not all changes were saved.")
+            } else {
+                alert("Changes have been successfully saved.");
+                location.reload();
+            }
         }
     });
 });
