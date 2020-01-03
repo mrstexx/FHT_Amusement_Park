@@ -24,7 +24,7 @@ include "../model/Room.php";
             <th scope="col">Room Number</th>
             <th scope="col">Description</th>
             <th scope="col">Price(€)</th>
-            <th scope="col">Available</th>
+            <th scope="col">Status</th>
         </tr>
         </thead>
         <tbody>

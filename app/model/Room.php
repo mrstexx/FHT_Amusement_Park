@@ -34,7 +34,7 @@ class Room extends DatabaseManager
                 oci_bind_by_name($stmt, ':nr', $row->number);
                 oci_bind_by_name($stmt, ':ret', $ret, 20);
                 oci_execute($stmt);
-                $row->available = $ret;
+                $row->status = $ret;
             }
         }
         $this->disconnect();
@@ -54,8 +54,8 @@ class Room extends DatabaseManager
             echo '<td>' . $row->description . '</td>';
             echo '<td>' . $row->price . '</td>';
 
-            if ($row->available) {
-                echo '<td class="room-status-2">Leaving at: ' . $row->available . '</td>';
+            if ($row->status) {
+                echo '<td class="room-status-2">Leaving at: ' . $row->status . '</td>';
             } else {
                 echo '<td class="room-status-1">Free</td>';
             }
