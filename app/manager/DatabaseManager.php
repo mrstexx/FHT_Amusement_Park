@@ -11,7 +11,7 @@ class DatabaseManager
 
     public function connect()
     {
-        $this->connection = oci_connect($this->userName, $this->password, $this->serverName);
+        $this->connection = oci_connect($this->userName, $this->password, $this->serverName, "UTF8");
         if (!$this->connection) {
             $e = oci_error();
             trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);

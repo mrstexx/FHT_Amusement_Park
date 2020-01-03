@@ -27,7 +27,7 @@ AS
 /** Table View: kinder_view
 /** Developer: Josef Wermann
 /** Description: Der View zeigt bei Gaesten zu allen Kindern die	
-/**              dazugehörigen Eltern an (bzw, falls nur ein 
+/**              dazugehï¿½rigen Eltern an (bzw, falls nur ein 
 /**              Elternteil bekannt ist, nur dieses.)
 /**
 /*********************************************************************/
@@ -65,3 +65,20 @@ ORDER BY name_kind;
 --SELECT * FROM kinder_view;
 
 /
+
+
+/*********************************************************************
+/**
+/** Table View: zimmer_view
+/** Developer: Stefan Miljevic
+/** Description: Der View zeigt die Zimmerinformationen
+/**              (nummer, bezeichnung und preise)
+/**
+/*********************************************************************/
+CREATE OR REPLACE VIEW zimmer_view AS
+SELECT zimmernummer, bezeichnung, preis
+FROM zimmer
+         JOIN zimmerkategorie USING (zimmerkategorieid)
+ORDER BY zimmernummer;
+
+-- SELECT * FROM zimmer_view;

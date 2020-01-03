@@ -170,3 +170,15 @@ EMPLOYEES STYLE
 .employees-control-bar {
     margin-bottom: 10px;
 }
+
+
+/*
+ROOMS STYLE
+ */
+.room-status-1 {
+    color: mediumseagreen;
+}
+
+.room-status-2 {
+    color: indianred;
+}

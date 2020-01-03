@@ -71,13 +71,16 @@
             <li>
                 <a href="#"><i class="fas fa-user fa-fw"></i> Guests</a>
             </li>
-            <li>
-                <a href="#"><i class="fas fa-bed fa-fw"></i> Rooms</a>
+            <li class="<?php if (strpos($_SERVER['PHP_SELF'], 'rooms.php') !== false) {
+                echo "active";
+            } ?>">
+                <a href="<?php echo isset($path) ? $path : ""; ?>rooms.php"><i class="fas fa-bed fa-fw"></i> Rooms</a>
             </li>
             <li class="<?php if (strpos($_SERVER['PHP_SELF'], 'employees.php') !== false) {
                 echo "active";
             } ?>">
-                <a href="<?php echo isset($path) ? $path : ""; ?>employees.php"><i class="far fa-id-badge fa-fw"></i> Employees</a>
+                <a href="<?php echo isset($path) ? $path : ""; ?>employees.php"><i class="far fa-id-badge fa-fw"></i>
+                    Employees</a>
             </li>
         </ul>
     </nav>
