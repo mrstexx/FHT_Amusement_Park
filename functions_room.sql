@@ -44,6 +44,6 @@ EXCEPTION
         DBMS_OUTPUT.PUT_LINE('No data found error occurred with passed room number: ' || l_i_roomNr_in);
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Error Code: ' || SQLCODE);
-        DBMS_OUTPUT.PUT_LINE('Error Mesage: ' || SQLERRM);
+        DBMS_OUTPUT.PUT_LINE('Error Message: ' || SQLERRM);
 END;
 /

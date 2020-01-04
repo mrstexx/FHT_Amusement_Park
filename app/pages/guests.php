@@ -10,7 +10,7 @@ include "includes/header.php";
                 <i class="fas fa-bars"></i>
             </button>
 
-            <h3>Create New Ticket</h3>
+            <h3>List of Guests</h3>
 
         </div>
     </nav>

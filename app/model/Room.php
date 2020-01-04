@@ -35,6 +35,7 @@ class Room extends DatabaseManager
                 oci_bind_by_name($stmt, ':ret', $ret, 20);
                 oci_execute($stmt);
                 $row->status = $ret;
+                oci_free_statement($stmt);
             }
         }
         $this->disconnect();

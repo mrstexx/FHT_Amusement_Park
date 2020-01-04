@@ -1,6 +1,5 @@
 <?php
 include "includes/header.php";
-include "../model/Invoice.php";
 ?>
 
 <div id="content">
@@ -11,22 +10,16 @@ include "../model/Invoice.php";
                 <i class="fas fa-bars"></i>
             </button>
 
-            <h3>List of Invoices</h3>
+            <h3>Check In</h3>
 
         </div>
     </nav>
 
     <!--Page Content-->
-    <div class="container">
-        <div class="row">
-            <?php
-            $invoices = new Invoice();
-            $invoices->showAllInvoices();
-            ?>
-        </div>
-    </div>
+
 
 </div>
+
 <?php
 include "includes/footer.php";
 ?>
