@@ -54,13 +54,12 @@
             <!--                    </li>-->
             <!--                </ul>-->
             <!--            </li>-->
-            <li class="<?php if (strpos($_SERVER['PHP_SELF'], 'new_ticket.php') != false
+            <li class="<?php if (strpos($_SERVER['PHP_SELF'], 'checkin.php') != false
                 || strpos($_SERVER['PHP_SELF'], 'index.php') != false) {
                 echo "active";
             } ?>">
-                <a href="<?php echo isset($path) ? $path : ""; ?>new_ticket.php"><i class="fas fa-ticket-alt fa-fw"></i>
-                    New
-                    Ticket</a>
+                <a href="<?php echo isset($path) ? $path : ""; ?>checkin.php"><i class="fas fa-ticket-alt fa-fw"></i>
+                    Check In</a>
             </li>
             <li class="<?php if (strpos($_SERVER['PHP_SELF'], 'invoices.php') !== false) {
                 echo "active";
@@ -68,8 +67,11 @@
                 <a href="<?php echo isset($path) ? $path : ""; ?>invoices.php"><i class="fas fa-receipt fa-fw"></i>
                     Invoices</a>
             </li>
-            <li>
-                <a href="#"><i class="fas fa-user fa-fw"></i> Guests</a>
+            <li class="<?php if (strpos($_SERVER['PHP_SELF'], 'guests.php') !== false) {
+                echo "active";
+            } ?>">
+                <a href="<?php echo isset($path) ? $path : ""; ?>guests.php"><i class="fas fa-user fa-fw"></i>
+                    Guests</a>
             </li>
             <li class="<?php if (strpos($_SERVER['PHP_SELF'], 'rooms.php') !== false) {
                 echo "active";
