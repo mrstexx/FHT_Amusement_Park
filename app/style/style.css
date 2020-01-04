@@ -182,3 +182,10 @@ ROOMS STYLE
 .room-status-2 {
     color: indianred;
 }
+
+/*
+INVOICES STYLE
+ */
+.invoice-card {
+    margin-bottom: 10px;
+}
