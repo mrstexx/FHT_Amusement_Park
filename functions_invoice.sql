@@ -99,7 +99,7 @@ BEGIN
     -- get all names from cursor
     FOR cv_entry IN cur_invoice_guest
         LOOP
-            l_v_guestList_ou := l_v_guestList_ou || cv_entry.vorname || ' ' || cv_entry.nachname || ', ';
+            l_v_guestList_ou := l_v_guestList_ou || cv_entry.vorname || ' ' || cv_entry.nachname || '; ';
         END LOOP;
 
 EXCEPTION

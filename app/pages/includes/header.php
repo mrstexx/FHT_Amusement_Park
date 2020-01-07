@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Amusement Parm Management System</title>
+    <title>Amusement Park Management System</title>
 
     <!-- Google Font-->
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
@@ -39,21 +39,6 @@
         </div>
 
         <ul class="list-unstyled components">
-            <!--            <li class="active">-->
-            <!--                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Start-->
-            <!--                    Page</a>-->
-            <!--                <ul class="collapse list-unstyled" id="homeSubmenu">-->
-            <!--                    <li>-->
-            <!--                        <a href="#">Home 1</a>-->
-            <!--                    </li>-->
-            <!--                    <li>-->
-            <!--                        <a href="#">Home 2</a>-->
-            <!--                    </li>-->
-            <!--                    <li>-->
-            <!--                        <a href="#">Home 3</a>-->
-            <!--                    </li>-->
-            <!--                </ul>-->
-            <!--            </li>-->
             <li class="<?php if (strpos($_SERVER['PHP_SELF'], 'checkin.php') != false
                 || strpos($_SERVER['PHP_SELF'], 'index.php') != false) {
                 echo "active";
