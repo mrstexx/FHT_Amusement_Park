@@ -100,28 +100,30 @@ if (strpos($_SERVER['PHP_SELF'], 'checkin.php') !== false) {
                 <form id="formModalGuest">
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="modalNewFirstName" placeholder="New first name">
+                            <input type="text" class="form-control" id="modalNewFirstName" name="firstName"
+                                   placeholder="New first name">
                         </div>
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" id="modalNewLastName" placeholder="New last name">
+                            <input type="text" class="form-control" id="modalNewLastName" name="lastName"
+                                   placeholder="New last name">
                         </div>
                     </div>
                     <hr>
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <input type="text" class="form-control" id="modalPrimFirstName"
-                                   placeholder="Primary first name">
+                                   placeholder="Primary first name" name="primFirstName">
                         </div>
                         <div class="form-group col-md-6">
                             <input type="text" class="form-control" id="modalPrimLastName"
-                                   placeholder="Primary last name">
+                                   placeholder="Primary last name" name="primLastName">
                         </div>
                     </div>
                     <hr>
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="modalDatetime">Arrival date</label>
-                            <input class="form-control" type="date" id="modalDatetime">
+                            <input class="form-control" type="date" id="modalDatetime" name="datetime">
                         </div>
                     </div>
                 </form>
@@ -148,24 +150,24 @@ if (strpos($_SERVER['PHP_SELF'], 'checkin.php') !== false) {
                     <div class="form-row">
                         <div class="form-group col-md-6">
                             <input type="text" class="form-control" id="modalRoomPrimFirstName"
-                                   placeholder="Primary first name">
+                                   placeholder="Primary first name" name="firstName">
                         </div>
                         <div class="form-group col-md-6">
                             <input type="text" class="form-control" id="modalRoomPrimLastName"
-                                   placeholder="Primary last name">
+                                   placeholder="Primary last name" name="lastName">
                         </div>
                     </div>
                     <hr>
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="modalRoomDatetime">Arrival date</label>
-                            <input class="form-control" type="date" id="modalRoomDatetime">
+                            <input class="form-control" type="date" id="modalRoomDatetime" name="datetime">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="modalRoomType">Room type</label>
-                            <select id="modalRoomType" class="form-control">
+                            <select id="modalRoomType" class="form-control" name="roomType">
                                 <?php
                                 $ci = new CheckIn();
                                 $ci->showRoomTypes();

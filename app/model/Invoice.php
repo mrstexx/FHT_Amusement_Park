@@ -78,7 +78,7 @@ class Invoice extends DatabaseManager
             echo '<div class="col-sm-6 invoice-card"><div class="card"><div class="card-body">';
             echo '<h5 class="card-title">Nr-' . sprintf("%06d", $row->id) . '</h5>';
             echo '<div class="card-text">';
-            echo 'Date: ' . $row->date . '<br>';
+            echo 'Arrival Date: ' . $row->date . '<br>';
             echo 'Nights number: ' . $row->nightsNum . '<br>';
             echo 'Pension form: ' . $row->pension . '<br>';
             echo 'Price: <b>' . $row->price . '$</b><br><hr>';

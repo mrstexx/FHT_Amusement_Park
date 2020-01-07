@@ -56,7 +56,7 @@ class Room extends DatabaseManager
             echo '<td>' . $row->price . '</td>';
 
             if ($row->status) {
-                echo '<td class="room-status-2">Leaving at: ' . $row->status . '</td>';
+                echo '<td class="room-status-2">Leaving: ' . $row->status . '</td>';
             } else {
                 echo '<td class="room-status-1">Free</td>';
             }
