@@ -94,7 +94,7 @@ BEGIN
     COMMIT;
 EXCEPTION
     WHEN x_person_id_not_exists THEN
-        DBMS_OUTPUT.put_line('Entered PersonID does not exists.');
+        DBMS_OUTPUT.put_line('Entered PersonID does not exist.');
         ROLLBACK TO update_personal_begin;
     WHEN OTHERS THEN
         DBMS_OUTPUT.put_line('Oracle Error Code: ' || SQLCODE);
