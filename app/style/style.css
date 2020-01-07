@@ -200,6 +200,6 @@ CHECKIN STYLE
     margin: 10px 0;
 }
 
-.checkin-toolbar {
-
+.checkin-toolbar .row {
+    margin-right: 0;
 }

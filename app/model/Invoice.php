@@ -46,7 +46,7 @@ class Invoice extends DatabaseManager
         $data = array();
         $conn = $this->connect();
         if ($conn) {
-            $statement = oci_parse($conn, 'SELECT * FROM rechnung_view');
+            $statement = oci_parse($conn, 'SELECT * FROM rechnung_view ORDER BY RECHNUNGID DESC');
             oci_execute($statement);
             while ($row = oci_fetch_array($statement, OCI_ASSOC + OCI_RETURN_NULLS)) {
                 $rowObj = new stdClass();

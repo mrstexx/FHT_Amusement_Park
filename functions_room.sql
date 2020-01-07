@@ -30,7 +30,7 @@ BEGIN
       AND ROWNUM = 1
     ORDER BY anzahl_naechte DESC;
 
-    IF (l_i_num_nights IS NOT NULL) AND (l_d_timestamp IS NOT NULL) THEN
+    IF (l_i_num_nights IS NOT NULL) AND (l_d_timestamp IS NOT NULL) AND (l_d_timestamp < sysdate) THEN
         -- if 0 or positive, room is already empty -> return null
         IF (trunc(sysdate) - (l_d_timestamp + l_i_num_nights)) < 0 THEN
             l_v_result_ou := to_char(l_d_timestamp + l_i_num_nights, 'YYYY-MM-DD HH24:mm');

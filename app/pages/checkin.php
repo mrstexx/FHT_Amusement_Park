@@ -1,6 +1,10 @@
 <?php
 include "includes/header.php";
-include "../model/CheckIn.php";
+if (strpos($_SERVER['PHP_SELF'], 'checkin.php') !== false) {
+    include "../model/CheckIn.php";
+} else {
+    include "model/CheckIn.php";
+}
 ?>
 
 <div id="content">
@@ -17,62 +21,68 @@ include "../model/CheckIn.php";
     </nav>
 
     <!--Page Content-->
-    <div class="container checkin-toolbar">
-        <div class="row justify-content-end">
-            <div class="">
-                <button id="addGuest" class="btn btn-light" data-toggle="modal" data-target="#modalGuest"><i
-                            class="fas fa-plus"></i> Add guest
-                </button>
-            </div>
-            <div class="">
-                <button id="addRoom" class="btn btn-light" data-toggle="modal" data-target="#modalRoom"><i
-                            class="fas fa-plus"></i> Add room
-                </button>
+    <div class="container">
+        <div class="checkin-toolbar">
+            <div class="row justify-content-end">
+                <div class="">
+                    <button id="addGuest" class="btn btn-light" data-toggle="modal" data-target="#modalGuest"><i
+                                class="fas fa-plus"></i> Add guest
+                    </button>
+                </div>
+                <div class="">
+                    <button id="addRoom" class="btn btn-light" data-toggle="modal" data-target="#modalRoom"><i
+                                class="fas fa-plus"></i> Add room
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container cont-checkin">
-        <form id="formCheckin">
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="firstName">First Name</label>
-                    <input type="text" class="form-control" id="firstName">
+        <div class="cont-checkin">
+            <form id="formCheckin" name="formCheckin">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="firstName" name="firstName">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" name="lastName">
+                    </div>
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control" id="lastName">
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label for="roomType">Room</label>
+                        <select id="roomType" class="form-control" name="roomType">
+                            <?php
+                            $ci = new CheckIn();
+                            $ci->showRoomTypes();
+                            ?>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col">
-                    <label for="roomType">Room</label>
-                    <select id="roomType" class="form-control">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                    </select>
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label for="pensionType">Pension Form</label>
+                        <select id="pensionType" class="form-control" name="pensionType">
+                            <?php
+                            $ci = new CheckIn();
+                            $ci->showPensionTypes();
+                            ?>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col">
-                    <label for="pensionType">Pension Form</label>
-                    <select id="pensionType" class="form-control">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                    </select>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="datetime">Arrival date</label>
+                        <input class="form-control" type="date" id="datetime" name="datetime">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="nightsNumber">Nights</label>
+                        <input type="number" class="form-control" id="nightsNumber" value="1" min="1" name="nights">
+                    </div>
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label for="datetime">Arrival date</label>
-                    <input class="form-control" type="date" id="datetime">
-                </div>
-                <div class="form-group col-md-6">
-                    <label for="nightsNumber">Nights</label>
-                    <input type="number" class="form-control" id="nightsNumber" value="1" min="1">
-                </div>
-            </div>
-            <button class="btn btn-block btn-primary" type="submit">Checkin</button>
-        </form>
+                <button class="btn btn-block btn-primary" type="submit">Checkin</button>
+            </form>
+        </div>
     </div>
 </div>
 
@@ -155,9 +165,11 @@ include "../model/CheckIn.php";
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="modalRoomType">Room type</label>
-                            <select id="modelRoomType" class="form-control">
-                                <option selected>Choose...</option>
-                                <option>...</option>
+                            <select id="modalRoomType" class="form-control">
+                                <?php
+                                $ci = new CheckIn();
+                                $ci->showRoomTypes();
+                                ?>
                             </select>
                         </div>
                     </div>

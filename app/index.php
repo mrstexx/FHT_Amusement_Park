@@ -2,7 +2,7 @@
 
 $path = 'pages/';
 
-// on opening index page, show new_ticket page
-include_once "pages/checkin.php";
+// on opening index page, show checkin page
+header("Location:" . "pages/checkin.php");
 
 ?>
