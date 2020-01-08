@@ -32,9 +32,9 @@ END;
 /** In: l_v_nachname_in - Nachname des Gastes.
 /** In: l_v_vornamen_in - Vorname des Gastes.
 /** In: l_d_zeitstempel_in - Ankunftdatum des Gastes.'YYYY-MM-DD'
-/** In: l_i_anzahl_naechte_in - Anzahl der Nächte des Aufenhaltes.
-/** In: l_v_bezeichnung_in - Bezeichnung der gewünschten Zimmerkategorie.
-/** In: l_v_bezeichnung_form_in - Bezeichnung der gewünschten Pensionsform.
+/** In: l_i_anzahl_naechte_in - Anzahl der Nï¿½chte des Aufenhaltes.
+/** In: l_v_bezeichnung_in - Bezeichnung der gewï¿½nschten Zimmerkategorie.
+/** In: l_v_bezeichnung_form_in - Bezeichnung der gewï¿½nschten Pensionsform.
 /** Developer: Josef Wermann + Alina Poljanc
 /** Description: The procedure creates a guest, if it's not existent yet,
 /**   					 a receipt and reserves a room for the given time, pensionform and category. 
@@ -67,8 +67,7 @@ AS
 	l_i_personID person.personID%TYPE := 0;
 	l_i_zimmernummer zimmer.zimmernummer%TYPE := 0;
 	l_i_rechnungID rechnung.rechnungID%TYPE; 
-	l_i_pensionsform INTEGER; 
-	l_v_result_room_status VARCHAR2(200); 
+	l_i_pensionsform INTEGER;
 	x_person_id_not_exists EXCEPTION;
 	x_person_id_exists_multiple EXCEPTION;
 	x_no_room_available EXCEPTION;
@@ -95,31 +94,10 @@ BEGIN
 		ELSE	
 			FOR vResult IN l_room_for_category_cur
 			LOOP
-				BEGIN
-					sp_room_status(vResult.zimmernummer,l_v_result_room_status);
-				END;
-				IF l_v_result_room_status IS NULL
-				THEN 
-					l_i_zimmernummer := vResult.zimmernummer;
-					EXIT;
-				ELSE
-					DECLARE
-						l_d_to_date DATE; 
-					BEGIN 
-						SELECT TO_DATE(l_l_d_zeitstempel_in,  'YYYY-MM-DD') + l_i_anzahl_naechte_in INTO l_d_to_date FROM dual;
-						DBMS_OUTPUT.PUT_LINE(l_l_d_zeitstempel_in);
-						DBMS_OUTPUT.PUT_LINE(l_v_result_room_status);
-						SELECT count(1) INTO l_i_help
-						FROM dual 
-						WHERE TO_DATE(l_v_result_room_status, 'YYYY-MM-DD HH24:MI') BETWEEN TO_DATE(l_l_d_zeitstempel_in,  'YYYY-MM-DD') AND l_d_to_date;			
-					END;
-					IF l_i_help = 1
-					THEN
-					-- room is available for the timeframe
-						l_i_zimmernummer := vResult.zimmernummer;
-						EXIT;
-					END IF;
-				END IF;
+			    IF f_is_room_free(vResult.zimmernummer, TO_DATE(l_l_d_zeitstempel_in,  'YYYY-MM-DD'), l_i_anzahl_naechte_in) THEN
+                    l_i_zimmernummer := vResult.zimmernummer;
+                    EXIT;
+                END IF;
 			END LOOP;
 			IF l_i_zimmernummer <> 0
 			THEN 
@@ -471,7 +449,7 @@ END;
 /** In: l_d_zeitstempel_in - Ankunftdatum des Gastes.'YYYY-MM-DD'
 /** In: l_v_vorname_primary_in - Vorname zu dem das Zimmer hinzugebucht wird
 /** In: l_v_nachname_primary_in - Nachname zu dem das Zimmer hinzugebucht wird
-/** In: l_v_bezeichnung_in - Bezeichnung der gewünschten Zimmerkategorie.
+/** In: l_v_bezeichnung_in - Bezeichnung der gewï¿½nschten Zimmerkategorie.
 /** Developer: Alina Poljanc
 /** Description: The procedure adds a room to an existing invoice
 /**   					 In case the given name is not found in the person table,
@@ -495,8 +473,7 @@ AS
 	l_i_anzahl_naechte INT; 	
 	l_i_personID person.personID%TYPE := 0;
 	l_i_zimmernummer zimmer.zimmernummer%TYPE := 0;
-	l_i_rechnungID rechnung.rechnungID%TYPE; 
-	l_v_result_room_status VARCHAR2(200); 
+	l_i_rechnungID rechnung.rechnungID%TYPE;
 	x_person_id_not_exists EXCEPTION;
 	x_person_id_exists_multiple EXCEPTION;
 	x_no_room_available EXCEPTION;
@@ -546,33 +523,10 @@ BEGIN
 			-- find room in given category
 			FOR vResult IN l_room_for_category_cur
 			LOOP
-				BEGIN
-					sp_room_status(vResult.zimmernummer,l_v_result_room_status);
-				END;
-				IF l_v_result_room_status IS NULL
-				THEN 
-					-- not yet booked room is found
-					l_i_zimmernummer := vResult.zimmernummer;
-					EXIT;
-				ELSE
-					-- booked roomed is checked if the timeframes are overlapping
-					DECLARE
-						l_d_to_date DATE; 
-					BEGIN 
-						SELECT TO_DATE(l_d_zeitstempel_in,  'YYYY-MM-DD') + l_i_anzahl_naechte INTO l_d_to_date FROM dual;
-						DBMS_OUTPUT.PUT_LINE(l_d_zeitstempel_in);
-						DBMS_OUTPUT.PUT_LINE(l_v_result_room_status);
-						SELECT count(1) INTO l_i_help
-						FROM dual 
-						WHERE TO_DATE(l_v_result_room_status, 'YYYY-MM-DD HH24:MI') BETWEEN TO_DATE(l_d_zeitstempel_in,  'YYYY-MM-DD') AND l_d_to_date;			
-					END;
-					IF l_i_help = 1
-					THEN
-					-- room is available for the timeframe
-						l_i_zimmernummer := vResult.zimmernummer;
-						EXIT;
-					END IF;
-				END IF;
+                IF f_is_room_free(vResult.zimmernummer, TO_DATE(l_d_zeitstempel_in,  'YYYY-MM-DD'), l_i_anzahl_naechte) THEN
+                    l_i_zimmernummer := vResult.zimmernummer;
+                    EXIT;
+                END IF;
 			END LOOP;
 			IF l_i_zimmernummer <> 0
 			THEN 
