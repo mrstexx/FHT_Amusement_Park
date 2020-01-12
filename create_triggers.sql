@@ -34,50 +34,6 @@ END;
 
 /*********************************************************************
 /**
-/** Table Trigger: attraktion_trigger
-/** Kind of trigger: Before delete
-/** Developer: Marius Hochwald
-/** Description: Loggt alle Attraktionen, die abgerissen wurden.
-/** Table & Attributes: attraktion and all attraktion attributes
-/**
-/*********************************************************************/
-
-create table attraktionslog (
-	id integer primary key,
-	bezeichnung VARCHAR(255),
-	zeitstempel timestamp
-);
-
-
-create sequence seq_attraktionslog;
-
-create or replace procedure write_attraktionslog(
-	i_bezeichnung char)
-as
-  PRAGMA AUTONOMOUS_TRANSACTION;
-  v_systimestamp timestamp;
-  v_cur_seq_attraktionslog integer;
-  v_attraktion attraktion%rowtype;
-begin
-  select systimestamp into v_systimestamp from dual;
-  select seq_attraktionslog.nextval into v_cur_seq_attraktionslog from dual;
-  select * into v_attraktion from attraktion where bezeichnung = i_bezeichnung;
-  insert into attraktionslog values(v_cur_seq_attraktionslog, v_attraktion.bezeichnung, v_systimestamp);
-  dbms_output.put_line('neuer Eintrag in Attraktionslog: id=' ||i_bezeichnung||' '||v_systimestamp );
-  commit;
-end;
-/
-
-create or replace trigger attraktionslog_trigger
-before delete on attraktion
-for each row
-begin
-	write_attraktionslog(:old.bezeichnung, 'Delete');
-END;
-/
-
-/*********************************************************************
-/**
 /** Table Trigger: zimmerkategorie_preischeck_trigger
 /** Kind of trigger: Before insert
 /** Developer: Marius Hochwald
@@ -130,4 +86,99 @@ EXCEPTION
 	RAISE_APPLICATION_ERROR(-20002,'THE PARK SHOULD AT LEAST EARN A PENNY');
 END;
 end;
+/
+
+/*********************************************************************
+/**
+/** Table Trigger: CheckInLog_trigger
+/** Kind of trigger: After insert
+/** Developer: Marius Hochwald
+/** Description: Loggt alle Checkins, die durch die Prozedur durchgeführt
+/** werden.
+/** Table & Attributes: rechnung, rechnung_gaeste, person, zimmer_rechnung
+/**
+/*********************************************************************/
+
+create table CheckInLog (
+	id integer primary key,
+	rechnungID integer,
+	vorname varchar(255),
+	nachname varchar(255),
+	personID integer,
+	pensionsform_tageskarteID integer,
+	anzahl_naechte integer,
+	zeitstempel timestamp,
+	zimmernummer integer
+);
+
+create sequence seq_CheckInLog;
+
+create or replace procedure write_CheckInLog(
+	i_rechnungID int)
+as
+  PRAGMA AUTONOMOUS_TRANSACTION;
+  v_systimestamp timestamp;
+  v_cur_seq_CheckInLog integer;
+  v_rechnung rechnung%rowtype;
+  v_zimmer_rechnung zimmer_rechnung%rowtype;
+  v_rechnung_gaeste rechnung_gaeste%rowtype;
+  v_person person%rowtype;
+begin
+	select systimestamp into v_systimestamp from dual;
+  select seq_CheckInLog.nextval into v_cur_seq_CheckInLog from dual;
+  select * into v_rechnung from rechnung where rechnungID = i_rechnungID;
+  select * into v_zimmer_rechnung from zimmer_rechnung where rechnungID = i_rechnungID;
+  select * into v_rechnung_gaeste from rechnung_gaeste where rechnungID = i_rechnungID;
+  select * into v_person from person where personID = v_rechnung_gaeste.personID;
+  insert into CheckInLog values(v_cur_seq_CheckInLog, v_rechnung.rechnungID, v_person.vorname, v_person.nachname, v_rechnung_gaeste.personID, v_rechnung.pensionsform_tageskarteID, v_rechnung.anzahl_naechte, v_systimestamp, v_zimmer_rechnung.zimmernummer);
+  dbms_output.put_line('neuer Eintrag im CheckInLog: PersonenID' || v_rechnung_gaeste.personID ||' '|| v_systimestamp );
+  commit;
+end;
+/
+
+create or replace trigger CheckInLog_trigger
+after insert on rechnung_gaeste
+for each row
+begin
+	write_CheckInLog(:new.rechnungID);
+END;
+/
+
+/*********************************************************************
+/**
+/** Table Trigger: ZimmerLog_trigger
+/** Kind of trigger: After insert
+/** Developer: Marius Hochwald
+/** Description: Erhöht einen Counter jedesmal, wenn ein Zimmer gebucht wurde.
+/** 			 Damit lässt sich feststellen,
+/**			 	 welche Zimmer am beliebtesten sind.
+/** Table & Attributes: zimmer_rechnung
+/**
+/*********************************************************************/
+
+create table ZimmerLog (
+	zimmernummerID integer primary key,
+	counter integer DEFAULT 0
+);
+
+insert into ZimmerLog (zimmernummerID) select zimmernummer from zimmer;
+
+create or replace procedure write_ZimmerLog(
+	i_zimmernummer int)
+as
+  v_counter int;
+begin
+  select counter into v_counter from ZimmerLog where zimmernummerID = i_zimmernummer;
+  v_counter := v_counter + 1;
+  Update ZimmerLog Set counter = v_counter where zimmernummerID = i_zimmernummer;
+  commit;
+end;
+/
+
+create or replace trigger ZimmerLog_trigger
+after insert on zimmer_rechnung
+for each row
+begin
+	write_ZimmerLog(:new.zimmernummer);
+END;
 /
