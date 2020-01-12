@@ -62,34 +62,6 @@ end;
 
 /*********************************************************************
 /**
-/** Table Trigger: pensionsform_preischeck_trigger
-/** Kind of trigger: Before insert
-/** Developer: Marius Hochwald
-/** Description: Überprüft beim Löschen eines Landes,
-/**				 dass auch die Orte dementsprechend entfernt werden
-/** Table & Attributes: land, ort
-/**
-/*********************************************************************/
-
-CREATE OR REPLACE TRIGGER pension_preischeck_trigger 
-before insert on pensionsform_tageskarte
-for each row
-declare
-	INVALID_PRICE EXCEPTION;
-begin
-  IF :new.preis < 0 THEN
-  RAISE INVALID_PRICE;
-  END IF;
-EXCEPTION
-	WHEN INVALID_PRICE THEN
-	BEGIN
-	RAISE_APPLICATION_ERROR(-20002,'THE PARK SHOULD AT LEAST EARN A PENNY');
-END;
-end;
-/
-
-/*********************************************************************
-/**
 /** Table Trigger: CheckInLog_trigger
 /** Kind of trigger: After insert
 /** Developer: Marius Hochwald
