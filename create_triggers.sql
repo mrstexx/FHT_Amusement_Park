@@ -34,7 +34,7 @@ END;
 
 /*********************************************************************
 /**
-/** Table Trigger: zimmerkategorie_preischeck_trigger
+/** Table Trigger: zimmerk_preischeck_trigger
 /** Kind of trigger: Before insert
 /** Developer: Marius Hochwald
 /** Description: Überprüft beim eintragen eines Preises, dass dieser nicht
@@ -43,7 +43,7 @@ END;
 /**
 /*********************************************************************/
 
-CREATE OR REPLACE TRIGGER zimmerkategorie_preischeck_trigger 
+CREATE OR REPLACE TRIGGER zimmerk_preischeck_trigger 
 before insert on zimmerkategorie
 for each row
 declare
@@ -95,7 +95,7 @@ end;
 /** Developer: Marius Hochwald
 /** Description: Loggt alle Checkins, die durch die Prozedur durchgeführt
 /** werden.
-/** Table & Attributes: rechnung, rechnung_gaeste, person, zimmer_rechnung
+/** Table & Attributes: rechnung_gaeste, person
 /**
 /*********************************************************************/
 
@@ -105,33 +105,25 @@ create table CheckInLog (
 	vorname varchar(255),
 	nachname varchar(255),
 	personID integer,
-	pensionsform_tageskarteID integer,
-	anzahl_naechte integer,
-	zeitstempel timestamp,
-	zimmernummer integer
+	zeitstempel timestamp
 );
 
 create sequence seq_CheckInLog;
 
 create or replace procedure write_CheckInLog(
-	i_rechnungID int)
+	i_rechnungID IN int,
+	i_personID IN int)
 as
   PRAGMA AUTONOMOUS_TRANSACTION;
   v_systimestamp timestamp;
   v_cur_seq_CheckInLog integer;
-  v_rechnung rechnung%rowtype;
-  v_zimmer_rechnung zimmer_rechnung%rowtype;
-  v_rechnung_gaeste rechnung_gaeste%rowtype;
   v_person person%rowtype;
 begin
 	select systimestamp into v_systimestamp from dual;
   select seq_CheckInLog.nextval into v_cur_seq_CheckInLog from dual;
-  select * into v_rechnung from rechnung where rechnungID = i_rechnungID;
-  select * into v_zimmer_rechnung from zimmer_rechnung where rechnungID = i_rechnungID;
-  select * into v_rechnung_gaeste from rechnung_gaeste where rechnungID = i_rechnungID;
-  select * into v_person from person where personID = v_rechnung_gaeste.personID;
-  insert into CheckInLog values(v_cur_seq_CheckInLog, v_rechnung.rechnungID, v_person.vorname, v_person.nachname, v_rechnung_gaeste.personID, v_rechnung.pensionsform_tageskarteID, v_rechnung.anzahl_naechte, v_systimestamp, v_zimmer_rechnung.zimmernummer);
-  dbms_output.put_line('neuer Eintrag im CheckInLog: PersonenID' || v_rechnung_gaeste.personID ||' '|| v_systimestamp );
+  select * into v_person from person where personID = i_personID;
+  insert into CheckInLog values(v_cur_seq_CheckInLog, i_rechnungID, v_person.vorname, v_person.nachname, i_personID, v_systimestamp);
+  dbms_output.put_line('neuer Eintrag im CheckInLog: PersonenID' || i_personID ||' '|| v_systimestamp );
   commit;
 end;
 /
@@ -140,7 +132,7 @@ create or replace trigger CheckInLog_trigger
 after insert on rechnung_gaeste
 for each row
 begin
-	write_CheckInLog(:new.rechnungID);
+	write_CheckInLog(:new.rechnungID, :new.personID);
 END;
 /
 
