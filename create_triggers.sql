@@ -135,7 +135,6 @@ begin
   select counter into v_counter from ZimmerLog where zimmernummerID = i_zimmernummer;
   v_counter := v_counter + 1;
   Update ZimmerLog Set counter = v_counter where zimmernummerID = i_zimmernummer;
-  commit;
 end;
 /
 
